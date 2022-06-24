@@ -37,9 +37,12 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          flavor: |
+            latest=false
           tags: |
             type=ref,event=branch
             type=match,pattern=v(.*),group=1
+            type=match,pattern=v(\d+\.\d+)-([a-z]+),group=2
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/universal' }}
 
       - name: Build and push Docker image
