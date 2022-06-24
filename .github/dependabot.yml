@@ -4,9 +4,16 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "friday"
-    # target-branch: dependency-updates
+      interval: "monthly"
+    target-branch: universal
+    # labels:
+    #   - "docker dependencies"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    target-branch: python
     # labels:
     #   - "docker dependencies"
 
@@ -15,7 +22,6 @@ updates:
     # default location of `.github/workflows`
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "friday"
+      interval: "monthly"
     # labels:
     #   - "workflow dependencies"
