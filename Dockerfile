@@ -19,11 +19,11 @@ RUN sed -ri "s/<number>4<\/number>/<number>1<\/number>/" /etc/xdg/openbox/rc.xml
 # RUN git clone --depth 1 https://github.com/novnc/noVNC.git /opt/novnc \
 #     && git clone --depth 1 https://github.com/novnc/websockify /opt/novnc/utils/websockify
 RUN mkdir -p /opt/novnc \
-    && curl -sSL https://github.com/novnc/noVNC/archive/v1.3.0.tar.gz -o /tmp/novnc-install.tar.gz \
+    && curl -sSL https://github.com/novnc/noVNC/archive/v1.4.0.tar.gz -o /tmp/novnc-install.tar.gz \
     && tar -zxf /tmp/novnc-install.tar.gz --strip-components=1 -C /opt/novnc \
     && rm -f /tmp/novnc-install.tar.gz \
     && mkdir -p /opt/novnc/utils/websockify \
-    && curl -sSL https://github.com/novnc/websockify/archive/v0.10.0.tar.gz -o /tmp/websockify-install.tar.gz \
+    && curl -sSL https://github.com/novnc/websockify/archive/v0.11.0.tar.gz -o /tmp/websockify-install.tar.gz \
     && tar -zxf /tmp/websockify-install.tar.gz --strip-components=1 -C /opt/novnc/utils/websockify \
     && rm -f /tmp/websockify-install.tar.gz \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
